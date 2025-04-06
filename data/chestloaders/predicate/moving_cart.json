@@ -1,0 +1,12 @@
+{
+	"condition": "minecraft:entity_properties",
+	"entity": "this",
+	"predicate": {
+		"type": "minecraft:chest_minecart",
+		"movement": {
+			"speed": {
+				"min": 0.3
+			}
+		}
+	}
+}

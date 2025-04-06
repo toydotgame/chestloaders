@@ -1,0 +1,10 @@
+{
+	"workbench.iconTheme": "mc-dp-icons",
+	"editor.fontFamily": "\"Minecraftia\", \"DejaVu Sans Mono\", monospace",
+	"editor.tabSize": 12,
+	"editor.letterSpacing": 0.5,
+	"editor.lineHeight": 1.5,
+	"cSpell.words": [
+		"datapack"
+	]
+}
