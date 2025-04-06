@@ -10,7 +10,9 @@ execute \
 	run forceload add ~-16 ~-16 ~16 ~16
 	# Creates a 3x3 of force-loaded entity processing  chunks around the cart
 
-# Remove unload tag from carts once force-loading is done (and they have been skipped):
+#> Remove unloaded cart tagging and scoreboard data (to save memory):
+#  Force-loading is done and these have been skipped
+execute as @e[tag=chestloaders.unload] run scoreboard players reset @s
 execute as @e[tag=chestloaders.unload] run tag @s remove chestloaders.unload
 # These formerly `unload`-tagged carts will become unloaded when the next call of `cart_unload`
 # occurs and purges them. `cart_timeout` occurs _after_ `cart_unload` and thus they don't
