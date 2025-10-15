@@ -12,9 +12,10 @@ chestloaders is a Minecraft 1.21.8+ datapack that adds a simple and lag-friendly
 		* **If not**, then the cart is promoted to be fully **marked for unloading**. The chunks around it will be unloaded in the range of 1–15 seconds from now
 
 > [!note]
-> **The distance a cart moved in a minute** is an important check for the logic of determining which carts shouldn't be loaded, in order to prevent lag. It is calculated as follows:
+> **The distance a cart moved in a minute** is an important check for the logic of determining which carts shouldn't be loaded, in order to prevent lag. It is calculated as:<br>
 > $$\mathrm{delta_pos}(x, y, z) \coloneqq \left|x_\mathrm{new} - x_\mathrm{old}\right| + \left|y_\mathrm{new} - y_\mathrm{old}\right| + \left|z_\mathrm{new} - z_\mathrm{old}\right|$$
-> **Note that** this is using the X/Y/Z coordinates, and _not_ velocity maths. Therefore, a cart can travel 300 m along a track (for example), but this track **must** cross over ~16 blocks in at least one axis. This prevents carts travelling in a small circle or in machines from being used as chunkloaders, thus only permitting long-distance-travelling carts.
+> 
+> **Note that** this is using the X/Y/Z coordinates, and _not_ velocity maths. Therefore, a cart can travel 300 m around a circular track (for example), but this track **must** cross over ~16 blocks in at least one axis. This prevents carts travelling in a small circle or in machines from being used as chunkloaders, thus only permitting long-distance-travelling carts.
 
 ## Installing
 1. Download [the code as a ZIP](https://github.com/toydotgame/chestloaders/archive/refs/heads/main.zip) using that link or by hitting _Code_ → _Download ZIP_ above
@@ -27,7 +28,7 @@ chestloaders is a Minecraft 1.21.8+ datapack that adds a simple and lag-friendly
 2. Delete the `chestloaders-main/` folder inside `<world name>/datapacks/`
 
 > [!note]
-> The `unload` function removed the following tags from all entities:
+> The `unload` function removes the following tags from all entities:
 > * `chestloaders.scheduled_unload`
 > * `chestloaders.unload`
 > * `chestloaders.just_unloaded`
